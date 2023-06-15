@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const API_KEY = 'be88e8b6abee602da2d38b01a63dd167';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
-export const imageURL = 'https://image.tmdb.org/t/p/original';
+export const imageURL = 'https://image.tmdb.org/t/p/w500';
 
 export const fetchMovies = async controllerSignal => {
   const responce = await axios.get(`/trending/movie/day`, {

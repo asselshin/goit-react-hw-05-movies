@@ -9,6 +9,9 @@ import {
   SecondarySection,
 } from './MovieInfo.styled';
 
+const defaultImg =
+  'https://www.baumandblume.com/wp-content/uploads/2017/02/no-image-icon-md.png';
+
 export default function MovieInfo({
   movie: {
     poster_path,
@@ -26,7 +29,11 @@ export default function MovieInfo({
       <Link to={location.state?.from ?? '/movies'}>Go back</Link>
       <MainSection>
         <ImageContainer>
-          <ImageDiv src={`${imageURL}/${poster_path}`} alt={original_title} />
+          <ImageDiv
+            src={poster_path ? `${imageURL}/${poster_path}` : defaultImg}
+            alt={original_title}
+            width={250}
+          />
         </ImageContainer>
         <TextContainer>
           <h1>

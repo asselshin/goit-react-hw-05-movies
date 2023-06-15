@@ -4,10 +4,11 @@ const ReviewList = ({ reviews }) => {
   return (
     <ul>
       {reviews.map(review => {
+        const { id, author, content } = review;
         return (
-          <li key={review.id}>
-            <p>{review.author}</p>
-            <p>{review.content}</p>
+          <li key={id}>
+            <p>{author}</p>
+            <p>{content}</p>
           </li>
         );
       })}

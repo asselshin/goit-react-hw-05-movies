@@ -14,6 +14,7 @@ export default function Reviews() {
 
     async function getReview() {
       try {
+        if (!movieId) return;
         setLoading(false);
         const fetchedReviews = await fetchMovieReviews(
           movieId,

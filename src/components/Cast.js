@@ -14,6 +14,7 @@ export default function Cast() {
 
     async function getCast() {
       try {
+        if (!movieId) return;
         setLoading(true);
         setError('');
         const fetchedCast = await fetchMovieCredits(movieId, controller.signal);

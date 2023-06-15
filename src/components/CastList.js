@@ -1,21 +1,25 @@
 import { imageURL } from 'movie-api';
 import PropTypes from 'prop-types';
 
+const defaultImg =
+  'https://www.baumandblume.com/wp-content/uploads/2017/02/no-image-icon-md.png';
+
 const CastList = ({ cast }) => {
   return (
     <ul>
       {cast.map(man => {
+        const { id, profile_path, name, original_name, character } = man;
         return (
-          <li key={man.id}>
-            {man.profile_path !== null && (
+          <li key={id}>
+            {profile_path !== null && (
               <img
-                src={`${imageURL}/${man.profile_path}`}
-                alt={man.name}
+                src={profile_path ? `${imageURL}/${profile_path}` : defaultImg}
+                alt={name}
                 width="100px"
               />
             )}
-            <p>{man.original_name}</p>
-            <p>Character: {man.character}</p>
+            <p>{original_name}</p>
+            <p>Character: {character}</p>
           </li>
         );
       })}
