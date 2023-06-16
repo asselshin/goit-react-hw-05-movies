@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieDetails } from 'movie-api';
-import MovieInfo from 'components/MovieInfo';
+import MovieInfo from 'components/MovieInfo/MovieInfo';
 
 const MovieDetails = () => {
   const { movieId } = useParams();

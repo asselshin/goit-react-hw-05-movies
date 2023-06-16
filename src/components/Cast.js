@@ -1,7 +1,7 @@
 import { fetchMovieCredits } from 'movie-api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import CastList from './CastList';
+import CastList from './CastList/CastList';
 
 export default function Cast() {
   const { movieId } = useParams();

@@ -1,29 +1,35 @@
 import { imageURL } from 'movie-api';
 import PropTypes from 'prop-types';
+import { StyledList, StyledCastItem } from './CastList.styled';
 
 const defaultImg =
   'https://www.baumandblume.com/wp-content/uploads/2017/02/no-image-icon-md.png';
 
 const CastList = ({ cast }) => {
   return (
-    <ul>
+    <StyledList>
       {cast.map(man => {
         const { id, profile_path, name, original_name, character } = man;
+        console.log(profile_path === null);
         return (
-          <li key={id}>
+          <StyledCastItem key={id}>
             {profile_path !== null && (
               <img
-                src={profile_path ? `${imageURL}/${profile_path}` : defaultImg}
+                src={
+                  profile_path !== null
+                    ? `${imageURL}/${profile_path}`
+                    : defaultImg
+                }
                 alt={name}
-                width="100px"
+                width="100"
               />
             )}
-            <p>{original_name}</p>
+            <h4>{original_name}</h4>
             <p>Character: {character}</p>
-          </li>
+          </StyledCastItem>
         );
       })}
-    </ul>
+    </StyledList>
   );
 };
 CastList.propTypes = {
