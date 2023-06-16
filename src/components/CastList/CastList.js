@@ -10,7 +10,6 @@ const CastList = ({ cast }) => {
     <StyledList>
       {cast.map(man => {
         const { id, profile_path, name, original_name, character } = man;
-        console.log(profile_path === null);
         return (
           <StyledCastItem key={id}>
             {profile_path !== null && (
