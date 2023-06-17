@@ -3,8 +3,8 @@ import { SharedLayout } from "./SharedLayout/SharedLayout";
 import Home from "pages/Home";
 import Movies from "pages/Movies";
 import MovieDetails from "pages/MovieDetails";
-import Cast from "./Cast";
-import Reviews from "./Reviews";
+import Cast from "../pages/Cast";
+import Reviews from "../pages/Reviews";
 
 const App = () => {
   return ( 

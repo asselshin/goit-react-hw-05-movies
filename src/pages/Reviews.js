@@ -1,7 +1,7 @@
 import { fetchMovieReviews } from 'movie-api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ReviewList from './ReviewList';
+import ReviewList from '../components/ReviewList';
 
 export default function Reviews() {
   const { movieId } = useParams();

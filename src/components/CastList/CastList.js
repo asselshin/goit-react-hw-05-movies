@@ -12,17 +12,17 @@ const CastList = ({ cast }) => {
         const { id, profile_path, name, original_name, character } = man;
         return (
           <StyledCastItem key={id}>
-            {profile_path !== null && (
-              <img
-                src={
-                  profile_path !== null
-                    ? `${imageURL}/${profile_path}`
-                    : defaultImg
-                }
-                alt={name}
-                width="100"
-              />
-            )}
+            <img
+              src={
+                profile_path !== null
+                  ? `${imageURL}/${profile_path}`
+                  : defaultImg
+              }
+              alt={name}
+              width="100"
+              height="150"
+              loading="lazy"
+            />
             <h4>{original_name}</h4>
             <p>Character: {character}</p>
           </StyledCastItem>
