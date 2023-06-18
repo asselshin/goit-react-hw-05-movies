@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { StyledList, StyledCastItem } from './CastList.styled';
 
 const defaultImg =
-  'https://www.baumandblume.com/wp-content/uploads/2017/02/no-image-icon-md.png';
+  'https://www.shutterstock.com/image-vector/no-photo-camera-outline-icon-600w-1081893020.jpg';
 
 const CastList = ({ cast }) => {
   return (
@@ -13,15 +13,10 @@ const CastList = ({ cast }) => {
         return (
           <StyledCastItem key={id}>
             <img
-              src={
-                profile_path !== null
-                  ? `${imageURL}/${profile_path}`
-                  : defaultImg
-              }
+              src={profile_path ? `${imageURL}/${profile_path}` : defaultImg}
               alt={name}
               width="100"
               height="150"
-              loading="lazy"
             />
             <h4>{original_name}</h4>
             <p>Character: {character}</p>
